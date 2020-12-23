@@ -45,9 +45,10 @@ def step_impl(context):
     try:
         dash = context.driver.find_element_by_xpath("/html/body/div[4]/div[2]/div/div[1]/p").text
     except:
+        context.driver.close()        
         assert False, "Test Failed"
+
     if dash == "WLP Fraud Investigation & Case Management":
+        context.driver.close()        
         assert True, "Test Passed"
-    else:
-        assert False, "Test fails"
-    context.driver.close()
+
