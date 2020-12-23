@@ -1,6 +1,7 @@
 from behave import *
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
+from selenium.webdriver.support.ui import Select
 import time
 
 @given('I launch Mozilla browser')
@@ -40,12 +41,31 @@ def step_impl(context):
     context.driver.find_element_by_id("bthp").click()
 
 
-@then('User must successfully login to the Dashboard page')
+@when('User must successfully login to the Dashboard page')
 def step_impl(context):
     dash = context.driver.find_element_by_xpath("/html/body/div[3]/div[2]/div/h2").text
     print(dash)
     if (dash == "HOME"):
-        context.driver.close()
+        print("login successfully")
     else:
         print("doesn't login successfully")
-        context.driver.close()   
+        #context.driver.close()   
+        
+        
+@when('Go to Issuer Fraud Management page')
+def step_impl(context):
+    context.driver.find_element_by_xpath("/html/body/div[4]/div[2]/div/div[2]/div[2]/ul/li/a").click()
+    #context.driver.select_element_by_visible_text("Issuer Fraud Management").click()
+    
+    
+@then('Select from Detection Cards section')
+def step_impl(context):
+    context.driver.find_element_by_xpath("/html/body/div[3]/div[2]/ul/li[3]/a").click()
+    context.driver.find_element_by_xpath("/html/body/div[4]/div[2]/div/ul/li[1]/a").click()
+    context.driver.find_element_by_id("cardHolderName").send_keys("ANNETE TRITZ")
+    context.driver.find_element_by_id("btfilter").click()
+    #context.driver.select_element_by_visible_text("Detection").click()
+    ch = context.driver.find_element_by_xpath("/html/body/div[4]/div[2]/div/div[1]/form/div[2]/div[2]/div[2]/table/tbody/tr[1]/td[6]").text
+    print(ch)
+    context.driver.close()
+   
