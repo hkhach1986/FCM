@@ -412,8 +412,11 @@ JavaScript error: resource://devtools/client/inspector/markup/views/element-edit
 JavaScript error: resource://devtools/client/inspector/markup/views/element-editor.js, line 508: TypeError: this.node.walkerFront is null
 JavaScript error: resource://devtools/client/inspector/markup/views/element-editor.js, line 508: TypeError: this.node.walkerFront is null
 1608730281253	addons.xpi	ERROR	System addon update list error Error: Failed downloading XML, status: 0, reason: error
-Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\haykkh\\AppData\\Local\\Temp\\rust_mozprofile6FR5d4"
-Can't find symbol 'eglSwapBuffersWithDamageEXT'.
+1608732954675	Marionette	INFO	Stopped listening on port 49493
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+an't find symbol 'eglSwapBuffersWithDamageEXT'.
 Can't find symbol 'eglSetDamageRegionKHR'.
 console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
 1608730031355	Marionette	INFO	Listening on port 49765
