@@ -18,7 +18,7 @@ def step_impl(context):
     context.driver = webdriver.Firefox(firefox_profile=context.profile,
     capabilities=context.desired_capability,
     executable_path="C:\\drivers\\geckodriver.exe")
-    context.driver.get("https://Int-fcm-gui.service.svc.meshcore.net/product-delivery-fcm/en/login/login")
+    context.driver.get("https://e2e-fcm-cop-gui.service1.svc.meshcore.net/product-delivery-fcm/login/Login")
     context.driver.maximize_window()
 
 
@@ -42,13 +42,10 @@ def step_impl(context):
 
 @then('User must successfully login to the Dashboard page')
 def step_impl(context):
-    try:
-        dash = context.driver.find_element_by_xpath("/html/body/div[4]/div[2]/div/div[1]/p").text
-    except:
-        context.driver.close()        
-        assert False, "Test Failed"
-
-    if dash == "WLP Fraud Investigation & Case Management":
-        context.driver.close()        
-        assert True, "Test Passed"
-
+    dash = context.driver.find_element_by_xpath("/html/body/div[3]/div[2]/div/h2").text
+    print(dash)
+    if (dash == "HOME"):
+        context.driver.close()
+    else:
+        print("doesn't login successfully")
+        context.driver.close()   

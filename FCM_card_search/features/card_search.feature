@@ -8,5 +8,5 @@ Feature: Card Search in FCM
     Then User must successfully login to the Dashboard page
     Examples:
     | username   | password |
-    | TTT        | test1234 |
+    | A764789    | test1234 |
 
