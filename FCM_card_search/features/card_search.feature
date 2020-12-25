@@ -10,7 +10,13 @@ Feature: Card Search in FCM
     | username   | password |
     | A764789    | test1234 |
     And Go to Issuer Fraud Management page
-    Then Select from Detection Cards section
+    And Select cards from Detection Cards section
+    Then search cards by Cardholder Name
+    And search cards by Card Number
+    And search cards by Case Reference
+    And search cards by Card Id
+    And search cards by Bank Account Number
+    And search cards by Additional Criteria (to be used in combination with CardHolder Name)
     
 
 
