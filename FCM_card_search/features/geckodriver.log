@@ -1137,3 +1137,42 @@ console.warn: SearchSettings: "get: No settings file exists, new profile?" (new 
 
 ###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
 
+1608896528365	geckodriver	INFO	Listening on 127.0.0.1:54674
+1608896531469	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\haykkh\\AppData\\Local\\Temp\\rust_mozprofileWm6QDM"
+Can't find symbol 'eglSwapBuffersWithDamageEXT'.
+Can't find symbol 'eglSetDamageRegionKHR'.
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1608896534492	Marionette	INFO	Listening on port 54683
+1608896534669	Marionette	WARN	TLS certificate errors will be ignored for this session
+1608896534672	Marionette	INFO	Proxy settings initialised: {"proxyType":"manual","ftpProxy":"10.26.221.13:3128","httpProxy":"10.26.221.13:3128","sslProxy":"10.26.221.13:3128"}
+1608896570774	Marionette	INFO	Stopped listening on port 54683
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+1608896902992	geckodriver	INFO	Listening on 127.0.0.1:54861
+1608896906126	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\haykkh\\AppData\\Local\\Temp\\rust_mozprofile9ypLTt"
+Can't find symbol 'eglSwapBuffersWithDamageEXT'.
+Can't find symbol 'eglSetDamageRegionKHR'.
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1608896909036	Marionette	INFO	Listening on port 54870
+1608896909350	Marionette	WARN	TLS certificate errors will be ignored for this session
+1608896909354	Marionette	INFO	Proxy settings initialised: {"proxyType":"manual","ftpProxy":"10.26.221.13:3128","httpProxy":"10.26.221.13:3128","sslProxy":"10.26.221.13:3128"}
+console.error: Region.jsm: "Error fetching region" (new Error("TIMEOUT", "resource://gre/modules/Region.jsm", 726))
+console.error: Region.jsm: "Failed to fetch region" (new Error("TIMEOUT", "resource://gre/modules/Region.jsm", 376))
+1608897106087	Marionette	INFO	Stopped listening on port 54870
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+"--marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\haykkh\\AppData\\Local\\Temp\\rust_mozprofilePC5fhq"
+Can't find symbol 'eglSwapBuffersWithDamageEXT'.
+Can't find symbol 'eglSetDamageRegionKHR'.
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1608897057716	Marionette	INFO	Listening on port 55063
+1608897058127	Marionette	WARN	TLS certificate errors will be ignored for this session
+1608897058130	Marionette	INFO	Proxy settings initialised: {"proxyType":"manual","ftpProxy":"10.26.221.13:3128","httpProxy":"10.26.221.13:3128","sslProxy":"10.26.221.13:3128"}
+console.error: services.settings: 
+  main/fxmonitor-breaches Signature failed  TypeError: NetworkError when attempting to fetch resource.
+1608897080061	Marionette	INFO	Stopped listening on port 55063
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+

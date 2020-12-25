@@ -131,12 +131,9 @@ def step_impl(context):
     ##External Bank Code=issuer Id, Zip Code= ZIP Code, BirthDay=Date of birth mapped with card details
        ###Enter cardholder=ch name 
     context.driver.find_element_by_id("cardHolderName").send_keys("AUSTIN BENTON")
-    time.sleep(1)
-
     ###Check if found a ch with mentioned name (AUSTIN BENTON)
-    
     context.driver.find_element_by_id("showHide_0").click()
-    time.sleep(1)
+    time.sleep(2)
     context.driver.find_element_by_id("externalBankcode").send_keys("6601")
     context.driver.find_element_by_id("zipCode").send_keys("10405")
     context.driver.find_element_by_id("birthDate").send_keys("14/07/1976")
