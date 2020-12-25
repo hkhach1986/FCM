@@ -9,6 +9,7 @@ Feature: Card Search in FCM
     Examples:
     | username   | password |
     | A764789    | test1234 |
+    | A764782    | test1234 |
     And Go to Issuer Fraud Management page
     And Select cards from Detection Cards section
     Then search cards by Cardholder Name

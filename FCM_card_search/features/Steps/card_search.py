@@ -43,15 +43,15 @@ def step_impl4(context):
 
 @when('User must successfully login to the Dashboard page')
 def step_impl5(context):
-    dash = context.driver.find_element_by_xpath("/html/body/div[3]/div[2]/div/h2").text
+    try:
+        dash = context.driver.find_element_by_xpath("//h2[contains(text(),'Home')]").text
+    #fail = context.driver.find_element_by_xpath("//p[@id='ferrorlg']").text
+    except:
+        context.driver.close()
+        assert False, "fail"
     if (dash == "HOME"):
-        print("login successfully")
-        #context.driver.close() 
-    else:
-        print("doesn't login successfully")
-        #context.driver.close()   
-        
-        
+        assert True, "login successfully"
+
 @when('Go to Issuer Fraud Management page')
 def step_impl(context):
     ###Press Issuer Fraud Management page
