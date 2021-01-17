@@ -2397,8 +2397,11 @@ console.warn: SearchSettings: "get: No settings file exists, new profile?" (new 
 1610840223325	Marionette	INFO	Proxy settings initialised: {"proxyType":"manual","ftpProxy":"10.26.221.13:3128","httpProxy":"10.26.221.13:3128","sslProxy":"10.26.221.13:3128"}
 console.error: "Could not load device list: Empty cache for devtools.devices.url"
 1610840730315	addons.xpi	ERROR	System addon update list error Error: Failed downloading XML, status: 0, reason: error
-1610840845175	geckodriver	INFO	Listening on 127.0.0.1:54382
-1610840848248	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\haykkh\\AppData\\Local\\Temp\\rust_mozprofileQGeshF"
+1610841760772	Marionette	INFO	Stopped listening on port 53925
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+"--marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\haykkh\\AppData\\Local\\Temp\\rust_mozprofileQGeshF"
 Can't find symbol 'eglSwapBuffersWithDamageEXT'.
 Can't find symbol 'eglSetDamageRegionKHR'.
 console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
