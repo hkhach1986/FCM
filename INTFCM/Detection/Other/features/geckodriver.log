@@ -2913,3 +2913,7 @@ console.warn: SearchSettings: "get: No settings file exists, new profile?" (new 
 1611237731062	Marionette	INFO	Listening on port 58047
 1611237731536	Marionette	WARN	TLS certificate errors will be ignored for this session
 1611237731541	Marionette	INFO	Proxy settings initialised: {"proxyType":"manual","ftpProxy":"10.26.221.13:3128","httpProxy":"10.26.221.13:3128","sslProxy":"10.26.221.13:3128"}
+1611238175103	Marionette	INFO	Stopped listening on port 58047
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
