@@ -113,7 +113,7 @@ def step_impl(context):
     text = context.driver.find_element_by_xpath("//li[contains(text(),'The Case id can only contain digits')]").text
     assert text == "The Case id can only contain digits", "error message is different"
     context.driver.find_element_by_id("btreset").click()
-    context.driver.close()
+
 
 
 @when('search Case by Card_Number "{Card_Number}" positive check')
@@ -158,4 +158,76 @@ def step_impl(context):
     context.driver.find_element_by_id("btfilter").click()
     text = context.driver.find_element_by_xpath("//li[contains(text(),'The Pan is invalid')]").text
     assert text == "The Pan is invalid", "error message is different"
+    context.driver.find_element_by_id("btreset").click()
+    
+    
+@When('search Case by Case_ID "{Case_ID}" press Update_id')
+def step_impl(context, Case_ID):    
+    context.driver.find_element_by_id("caseId").send_keys(Case_ID)
+    context.driver.find_element_by_id("btfilter").click()
+    context.driver.find_element_by_xpath("//a[@class='btimgupdate']").click()
+    time.sleep(5)
+
+@When ('open case Details')
+def step_impl(context):
+    context.driver.find_element_by_id("showHide").click()
+    
+@When ('Case Status = Closed and Closure Reason = Investigation Completed')
+def step_impl(context):
+    case_status = context.driver.find_element_by_id("caseStatusUpdate")
+    drp_case_status = Select(case_status)
+    drp_case_status.select_by_visible_text("Closed")
+    time.sleep(5)
+    Closure_Reason = context.driver.find_element_by_id("closureReason")
+    drp_Closure_Reason = Select(Closure_Reason)
+    drp_Closure_Reason.select_by_visible_text("Investigation Completed")
+    time.sleep(5)
+@Then ('press save button for closing case')       
+def step_impl(context):
+    context.driver.find_element_by_xpath("//input[@type='button']").click()
+    case_status = context.driver.find_element_by_xpath("//td[@class='status']").text
+    cardPan = context.driver.find_element_by_xpath("//td[@class='cardNumber t-sort-column-descending']").text
+    with open(r"C:\Users\haykkh\Desktop\TestCaseOutput\e2e\Case\close_status.txt", "w+") as file:
+        file.write("case_status = " + case_status + '\n')
+        file.write("Card Number = " + cardPan + "\n")
+        file.close()
+    
+    golden_file = r"C:\Users\haykkh\Desktop\TestCaseOutput\e2e\Case\close_status_gold.txt"
+    first_file = r"C:\Users\haykkh\Desktop\TestCaseOutput\e2e\Case\close_status.txt"
+    first_file_lines = open(first_file).readlines()
+    golden_file_lines = open(golden_file).readlines()
+    difference = difflib.HtmlDiff().make_file(first_file_lines, golden_file_lines, first_file, golden_file)
+    difference_report = open(r'C:\Users\haykkh\Desktop\TestCaseOutput\e2e\Case\difference_close_report.html', 'w')
+    difference_report.write(difference)
+    difference_report.close()
+    
+    golden_file1 = open(r"C:\Users\haykkh\Desktop\TestCaseOutput\e2e\Case\close_status_gold.txt", 'r').read()
+    first_file2 = open(r"C:\Users\haykkh\Desktop\TestCaseOutput\e2e\Case\close_status.txt", 'r').read()
+    assert golden_file1 == first_file2, "not equal files" 
+
+@Then ('reopen the case')  
+def step_impl(context):
+    context.driver.find_element_by_xpath("//a[@class='btimgreopen']").click()
+    context.driver.find_element_by_xpath("//input[@type='button']").click()
+    
+    case_status = context.driver.find_element_by_xpath("//td[@class='status']").text
+    cardPan = context.driver.find_element_by_xpath("//td[@class='cardNumber t-sort-column-descending']").text
+    with open(r"C:\Users\haykkh\Desktop\TestCaseOutput\e2e\Case\reopen_status.txt", "w+") as file:
+        file.write("case_status = " + case_status + '\n')
+        file.write("Card Number = " + cardPan + "\n")
+        file.close()
+
     context.driver.close()
+    
+    golden_file = r"C:\Users\haykkh\Desktop\TestCaseOutput\e2e\Case\reopen_status_gold.txt"
+    first_file = r"C:\Users\haykkh\Desktop\TestCaseOutput\e2e\Case\reopen_status.txt"
+    first_file_lines = open(first_file).readlines()
+    golden_file_lines = open(golden_file).readlines()
+    difference = difflib.HtmlDiff().make_file(first_file_lines, golden_file_lines, first_file, golden_file)
+    difference_report = open(r'C:\Users\haykkh\Desktop\TestCaseOutput\e2e\Case\difference_reopen_report.html', 'w')
+    difference_report.write(difference)
+    difference_report.close()
+    
+    golden_file1 = open(r"C:\Users\haykkh\Desktop\TestCaseOutput\e2e\Case\reopen_status_gold.txt", 'r').read()
+    first_file2 = open(r"C:\Users\haykkh\Desktop\TestCaseOutput\e2e\Case\reopen_status.txt", 'r').read()
+    assert golden_file1 == first_file2, "not equal files"    

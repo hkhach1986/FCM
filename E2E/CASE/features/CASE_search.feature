@@ -1,4 +1,4 @@
-Feature: Case Search in E2EFCM ->CASE section.
+Feature: Case search in CASE section.
     
     Scenario: CASE Search with Case ID
     Given launch Mozilla browser
@@ -19,7 +19,12 @@ Feature: Case Search in E2EFCM ->CASE section.
     Then press filter to see searching result Card_Number
     When search Case by Card_Number "vvv" negative check
     Then press filter to see searching results, but it will return error message pan
+    When search Case by Case_ID "36010" press Update_id
+    When open case Details
+    When Case Status = Closed and Closure Reason = Investigation Completed
+    Then press save button for closing case
+    #When Show Alert Details
+    Then reopen the case
 
-    
 
 
