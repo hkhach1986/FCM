@@ -2,7 +2,7 @@ Feature: Card Payments Search in E2EFCM Detection->Other section.
     
     Scenario Outline: Card Payments Search
     Given launch Mozilla browser
-    When open INTFCM Homepage
+    When open E2EFCM Homepage
     And Enter username "<username>" and password "<password>"
     And Click on login button
     And User must successfully login to the Dashboard page
@@ -31,7 +31,7 @@ Feature: Card Payments Search in E2EFCM Detection->Other section.
     Then press filter button
     Examples:
     | username   | password | convertedTransactionAmountFrom | convertedTransactionAmountTo | externalId | panReference                                                     | sourceCountryDropDown | sourceProviderId | filter0 | filter1 | filter2 | filter3   | filter4     | filter5 | filterTransactionSubType | businessId | targetId   | targetCountryDropDown | mccIDDropDown | targetProviderId | targetTechnicalId | filter6 | filter7 | filter8                                                          |
-    | A764789    | test1234 | 49                             | 51                           |  8         | E9C07E171704E9EAB71EF8EBDA9C4130F68514CA657CF3204C32311EE1B884A4 | USA                   | 6601             | 90      |   04    | 14      |  0        | APP_OLW_O   |   0     | 100                      | 6601       | 1234567    | DEU                   | 5969          |                  | 00000001          | 190002  | USA     | 4A05A3B9F40DDD21F73F5749C4AC81CD465013541C857EDD8C155F46BB0CEE09 |
+    | A764789    | test1234 | 49                             | 51                           |  8         | FE7A13A936131D3ED384654BE2F7CC1BE5A2AD7D31D76B1DBB5E774FA9ACD409 | USA                   | 6601             | 90      |   04    | 14      |  0        | APP_OLW_O   |   0     | 100                      | 6601       | 1234567    | DEU                   | 5969          |                  | 00000001          | 190002  | USA     | 4A05A3B9F40DDD21F73F5749C4AC81CD465013541C857EDD8C155F46BB0CEE09 |
 
 
 

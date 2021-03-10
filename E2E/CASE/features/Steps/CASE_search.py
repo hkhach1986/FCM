@@ -4,7 +4,6 @@ from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.support.ui import Select
 import time
 import difflib
-import filecmp
 
 @given('launch Mozilla browser')
 def step_impl1(context):

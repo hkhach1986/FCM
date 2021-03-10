@@ -25,7 +25,7 @@ def step_impl1(context):
     context.driver.maximize_window()
 
 
-@when('open INTFCM Homepage')
+@when('open E2EFCM Homepage')
 def step_impl2(context):
     title = context.driver.title
     print(title)

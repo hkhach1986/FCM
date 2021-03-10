@@ -151,5 +151,33 @@ def step_impl(context):
     with open(r"C:\Users\haykkh\Desktop\Other_payments_search_result\Other_search_result.txt", "w+") as file:
         file.write(Other_payments_search_result)
     ###Reset all filled fields
-    context.driver.find_element_by_id("btreset").click()
-    #context.driver.close()
+    #context.driver.find_element_by_id("btreset").click()
+    context.driver.close()
+    
+        time.sleep(1)
+    context.driver.find_element_by_id("btfilter").click()
+    time.sleep(2)
+    Auth_Code = context.driver.find_element_by_xpath("//td[contains(text(),'190002')]").text
+    cardPan = context.driver.find_element_by_xpath("//td[contains(text(),'487178XXXXXX3650')]").text
+    with open(r"C:\Users\haykkh\Desktop\TestCaseOutput\e2e\Detection\Other\search_result.txt", "w+") as file:
+        file.write("Auth_Code = " + Auth_Code + '\n')
+        file.write("PAN = " + cardPan + "\n")
+        file.close()
+        # with open(r"C:\Users\haykkh\Desktop\TestCaseOutput\e2e\Detection\Other\search_result_gold.txt", "r") as filegold:
+        #     context.assertTrue(filecmp(filegold, file, shallow=False))
+    ###Reset all filled fields
+    #context.driver.find_element_by_id("btreset").click()
+    context.driver.close()
+    
+    golden_file = r"C:\Users\haykkh\Desktop\TestCaseOutput\e2e\Detection\Other\search_result_gold.txt"
+    first_file = r"C:\Users\haykkh\Desktop\TestCaseOutput\e2e\Detection\Other\search_result.txt"
+    first_file_lines = open(first_file).readlines()
+    golden_file_lines = open(golden_file).readlines()
+    difference = difflib.HtmlDiff().make_file(first_file_lines, golden_file_lines, first_file, golden_file)
+    difference_report = open(r'C:\Users\haykkh\Desktop\TestCaseOutput\e2e\Detection\Other\difference_reprt.html', 'w')
+    difference_report.write(difference)
+    difference_report.close()
+    
+    golden_file1 = open(r"C:\Users\haykkh\Desktop\TestCaseOutput\e2e\Detection\Other\search_result_gold.txt", 'r').read()
+    first_file2 = open(r"C:\Users\haykkh\Desktop\TestCaseOutput\e2e\Detection\Other\search_result.txt", 'r').read()
+    assert golden_file1 == first_file2, "not equal files"

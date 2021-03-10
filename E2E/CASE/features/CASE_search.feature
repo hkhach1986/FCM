@@ -9,7 +9,7 @@ Feature: Case search in CASE section.
     And Go to Issuer Fraud Management page
     And Select CASE section
     And search Case by Case_ID "36010" positive check
-    Then press filter to see searching results
+
     Then reset buttons for clearing all filleds
     When search Case by Case_ID "qqqq" negative check
     Then press filter to see searching results, but it will return error message 
