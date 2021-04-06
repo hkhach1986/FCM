@@ -5,6 +5,7 @@ from selenium.webdriver.support.ui import Select
 import time
 import difflib
 
+
 @given('launch Mozilla browser')
 def step_impl1(context):
     context.myProxy= "10.26.221.13:3128"
@@ -22,7 +23,6 @@ def step_impl1(context):
     executable_path="C:\\drivers\\geckodriver.exe")
     context.driver.get("https://e2e-fcm-cop-gui.service1.svc.meshcore.net/product-delivery-fcm/login/Login")
     context.driver.maximize_window()
-
 
 @when('open E2EFCM Homepage')
 def step_impl2(context):
@@ -69,8 +69,6 @@ def step_impl(context):
 def step_impl(context, Case_ID):
     context.driver.find_element_by_id("caseId").send_keys(Case_ID)
     
-    
-
     
 @Then('press filter to see searching results')
 def step_impl(context):
