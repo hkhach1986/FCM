@@ -1,4 +1,4 @@
-Feature: Change Case status when the Case Status = In Progress
+Feature: Change Case status From Closed to In Progress and vise versa
 
     Scenario: CASE Search with Case ID
     Given launch Mozilla browser
