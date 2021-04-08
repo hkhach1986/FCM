@@ -94,7 +94,7 @@ def step_impl(context):
     CaseCreationDate = context.driver.find_element_by_xpath(constants.Constants.CLCaseCreationDate).text
     Issuer = context.driver.find_element_by_xpath(constants.Constants.CLIssuer).text
     
-    with open(r"C:\Users\haykkh\Desktop\TestCaseOutput\e2e\CaseReopenClose\status_InProgress.txt", "w+") as file:
+    with open(r"C:\Users\haykkh\Desktop\TestCaseOutput\e2e\Case\CaseReopenClose\status_InProgress.txt", "w+") as file:
         
         file.write("Card Number = " + cardPan + "\n")
         file.write("Card Number Reference = " + cardNumberRef + "\n")
@@ -111,8 +111,8 @@ def step_impl(context):
         file.write("issuer = " + Issuer + "\n")
         file.close()
     
-    golden_file = r"C:\Users\haykkh\Desktop\TestCaseOutput\e2e\CaseReopenClose\status_InProgress_gold.txt"
-    first_file = r"C:\Users\haykkh\Desktop\TestCaseOutput\e2e\CaseReopenClose\status_InProgress.txt"
+    golden_file = r"C:\Users\haykkh\Desktop\TestCaseOutput\e2e\Case\CaseReopenClose\status_InProgress_gold.txt"
+    first_file = r"C:\Users\haykkh\Desktop\TestCaseOutput\e2e\Case\CaseReopenClose\status_InProgress.txt"
     first_file_lines = open(first_file).readlines()
     golden_file_lines = open(golden_file).readlines()
     difference = difflib.HtmlDiff().make_file(first_file_lines, golden_file_lines, first_file, golden_file)
@@ -120,8 +120,8 @@ def step_impl(context):
     difference_report.write(difference)
     difference_report.close()
     
-    golden_file1 = open(r"C:\Users\haykkh\Desktop\TestCaseOutput\e2e\CaseReopenClose\status_InProgress_gold.txt", 'r').read()
-    first_file2 = open(r"C:\Users\haykkh\Desktop\TestCaseOutput\e2e\CaseReopenClose\status_InProgress.txt", 'r').read()
+    golden_file1 = open(r"C:\Users\haykkh\Desktop\TestCaseOutput\e2e\Case\CaseReopenClose\status_InProgress_gold.txt", 'r').read()
+    first_file2 = open(r"C:\Users\haykkh\Desktop\TestCaseOutput\e2e\Case\CaseReopenClose\status_InProgress.txt", 'r').read()
     assert golden_file1 == first_file2, "not equal files" 
     
 @when('press Update id to close the case again')
@@ -155,7 +155,7 @@ def step_impl(context):
     CaseCreationDate = context.driver.find_element_by_xpath(constants.Constants.CLCaseCreationDate).text
     Issuer = context.driver.find_element_by_xpath(constants.Constants.CLIssuer).text
     
-    with open(r"C:\Users\haykkh\Desktop\TestCaseOutput\e2e\CaseReopenClose\status_closed.txt", "w+") as file:
+    with open(r"C:\Users\haykkh\Desktop\TestCaseOutput\e2e\Case\CaseReopenClose\status_closed.txt", "w+") as file:
         
         file.write("Card Number = " + cardPan + "\n")
         file.write("Card Number Reference = " + cardNumberRef + "\n")
@@ -174,17 +174,17 @@ def step_impl(context):
     context.driver.close()
     
     
-    golden_file = r"C:\Users\haykkh\Desktop\TestCaseOutput\e2e\CaseReopenClose\status_closed_gold.txt"
-    first_file = r"C:\Users\haykkh\Desktop\TestCaseOutput\e2e\CaseReopenClose\status_closed.txt"
+    golden_file = r"C:\Users\haykkh\Desktop\TestCaseOutput\e2e\Case\CaseReopenClose\status_closed_gold.txt"
+    first_file = r"C:\Users\haykkh\Desktop\TestCaseOutput\e2e\Case\CaseReopenClose\status_closed.txt"
     first_file_lines = open(first_file).readlines()
     golden_file_lines = open(golden_file).readlines()
     difference = difflib.HtmlDiff().make_file(first_file_lines, golden_file_lines, first_file, golden_file)
-    difference_report = open(r'C:\Users\haykkh\Desktop\TestCaseOutput\e2e\CaseReopenClose\difference_closed_report.html', 'w')
+    difference_report = open(r'C:\Users\haykkh\Desktop\TestCaseOutput\e2e\Case\CaseReopenClose\difference_closed_report.html', 'w')
     difference_report.write(difference)
     difference_report.close()
     
-    golden_file1 = open(r"C:\Users\haykkh\Desktop\TestCaseOutput\e2e\CaseReopenClose\status_closed_gold.txt", 'r').read()
-    first_file2 = open(r"C:\Users\haykkh\Desktop\TestCaseOutput\e2e\CaseReopenClose\status_closed.txt", 'r').read()
+    golden_file1 = open(r"C:\Users\haykkh\Desktop\TestCaseOutput\e2e\Case\CaseReopenClose\status_closed_gold.txt", 'r').read()
+    first_file2 = open(r"C:\Users\haykkh\Desktop\TestCaseOutput\e2e\Case\CaseReopenClose\status_closed.txt", 'r').read()
     assert golden_file1 == first_file2, "not equal files" 
     
     
