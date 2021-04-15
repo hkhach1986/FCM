@@ -70,8 +70,8 @@ def step_impl(context):
     #context.driver.close()
 @when('search payment in other section by transaction amounts "{convertedTransactionAmountFrom}", "{convertedTransactionAmountTo}"')
 def step_impl(context, convertedTransactionAmountFrom, convertedTransactionAmountTo):
-   context.driver.find_element_by_id("convertedTransactionAmountFrom").send_keys(convertedTransactionAmountFrom)
-   context.driver.find_element_by_id("convertedTransactionAmountTo").send_keys(convertedTransactionAmountTo)
+    context.driver.find_element_by_id("convertedTransactionAmountFrom").send_keys(convertedTransactionAmountFrom)
+    context.driver.find_element_by_id("convertedTransactionAmountTo").send_keys(convertedTransactionAmountTo)
 ###These 2 fields doesn't work properly as the given authorization doesn't get correct in the results
 
 @when('search payment in other section by external ID "{externalId}", "{panReference}"')

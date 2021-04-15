@@ -32,6 +32,8 @@ class Constants:
     LastUpdatedTo = "lastUpdatedTo"
     CaseToCheck = "caseToCheck"
     CaseTransferred = "caseTransferred"
+    CaseCardHolderName = "cardHolderName"
+    CaseReference = "caseReference"
     ConfimedFraudReport = "btconfirmedfraudreport"
     WriteoffReport = "btwriteoffreport"
     NextCase = "btnextcase"
